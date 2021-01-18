@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <header>
+        <h1><strong>Paint Shop</strong></h1>
+    </header>
+
+    <article>
+        <p>Este programa ira calcular quantos litros de tinta eh necessario
+            para pintar a sua parede. <br>
+            O galao de tinta custa R$18 <br>
+            Digite quantos metros quadrados tem a sua area <br>
+            E saiba quantos litros de tinta voce vai precisar!
+        </p>
+    </article>
+
+    <section>
+        <div>
+            <p>Digite a area:
+                <input type="number" name="fnum" id="fnum" placeholder=""> m²
+            </p>
+            <p>
+                <input type="button" value="Calcular" onclick="calcular()">
+            </p>
+        </div>
+        <div id="res">
+            Aguardando dados..
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; AlexandrePereira</p>
+    </footer>
+    
+</body>
+</html>
