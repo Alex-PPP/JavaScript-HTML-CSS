@@ -25,18 +25,18 @@ let game = [
 ];
 
 let hero = {
-    postion: 0,
+    position: 0,
     get current() {
-        return game[this.postion]
+        return game[this.position]
     },
     set current(position) {
-        this.postion = position
+        this.position = position
     },
     next() {
-        ++this.postion
+        ++this.position
     },
     previous() {
-        --this.postion
+        --this.position
     }
 };
 
@@ -56,5 +56,5 @@ console.log(hero.current);
 hero.previous();
 console.log(hero.current);
 
-hero.postion = 5;
+hero.position = 5;
 console.log(hero.current);
