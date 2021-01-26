@@ -14,7 +14,7 @@ let game = [
         Command: 'Interact'
     },
     {
-        Command: 'Shield up/Shield down'
+        Command: 'Shield Block'
     },
     {
         Command: 'Sword Atack'
