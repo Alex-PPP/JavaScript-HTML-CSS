@@ -34,5 +34,6 @@ header {
 }
 
 header h1 {
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
+

@@ -9,11 +9,12 @@ window.onload = function() {
     const vel = 1;
     
     let velX = velY = 0;
-    let pecX = 10;
-    let pecY = 15;
-    let lenP = 20;
-    let quaP = 30;
-    let appX = appY = 15;
+    let pX = 10;
+    let pY = 15;
+    let tP = 20;
+    let qP = 30;
+    let appleX = appleY = 15;
+    let score = 0;
 
     let trail = [];
 
@@ -21,46 +22,53 @@ window.onload = function() {
 
     function game() {
 
-        pecX += velX;
-        pecY += velY;
-        if (pecX < 0) {
-            pecX = quaP - 1;
+        pX += velX;
+        pY += velY;
+        if (pX < 0) {
+            pX = qP - 1;
         }
-        if (pecX > quaP -1) {
-            pecX = 0;
+        if (pX > qP -1) {
+            pX = 0;
         }
-        if (pecY < 0) {
-            pecY = quaP - 1;
+        if (pY < 0) {
+            pY = qP - 1;
         }
-        if (pecY > quaP -1) {
-            pecY = 0
+        if (pY > qP -1) {
+            pY = 0
         }
 
+        
         context.fillStyle = '#3737a896';
         context.fillRect(0, 0, stage.width, stage.height);
 
         context.fillStyle = 'orangered';
-        context.fillRect(appX*lenP, appY*lenP, lenP, lenP);
+        context.fillRect(appleX*tP, appleY*tP, tP, tP);
+        context.font = "italic 30px Calibri";
+        context.fillText(`${score += 0}`, 550, 40);
+        
+
 
         context.fillStyle = 'orange'
         for (let i = 0; i < trail.length; i++) {
-            context.fillRect(trail[i].x*lenP, trail[i].y*lenP, lenP, lenP);
+            context.fillRect(trail[i].x*tP, trail[i].y*tP, tP, tP);
 
-            if (trail[i].x === pecX && trail[i].y === pecY) {
+            if (trail[i].x === pX && trail[i].y === pY) {
                 velX = velY = 0;
                 tail = 5;
+                score = 0;
             }
         }
 
-        trail.push ({x: pecX, y: pecY});
+        trail.push ({x: pX, y: pY});
         while (trail.length > tail) {
             trail.shift();
         }
 
-        if (appX === pecX && appY === pecY) {
+        if (appleX === pX && appleY === pY) {
             tail++;
-            appX = Math.floor(Math.random()*quaP);
-            appY = Math.floor(Math.random()*quaP);
+            score++;
+            appleX = Math.floor(Math.random()*qP);
+            appleY = Math.floor(Math.random()*qP);
         }
 
 
